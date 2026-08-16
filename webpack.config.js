@@ -7,6 +7,7 @@ export default{
     output: {
         filename: "main.js",
         path: path.resolve(import.meta.dirname, "dist"),
+        publicPath: "/", // Change to "/repo-name/" if deploying to a project page
         clean: true,
     },
     devtool: "eval-source-map",
@@ -32,6 +33,10 @@ export default{
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 use: "asset/resource",
             },
+            {
+                test: /\.(ttf|otf|woff|woff2)$/i,
+                use: "asset/resource",
+            }
         ],
     },
 };
